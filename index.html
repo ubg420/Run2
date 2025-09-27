@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Run 2</title>
+  </head>
+  <body style="margin:0;padding:0">
+    <div id="ruffle"></div>
+	<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("ruffle");
+        player.id = "player";
+        player.style.width = "100vw";
+        player.style.height = "100vh";
+		player.style.position = "fixed";
+        container.appendChild(player);
+        player.load("Run2.swf");
+      });
+    </script>
+  </body>
+</html>
